@@ -311,8 +311,8 @@
           </div>
         </div>
         <div class="track-meta">
-          <strong>Small Hours — Demo Track</strong>
-          <span>Real MP3 playback · synchronized lyric cues</span>
+          <strong>Small Hours — Voice Sync Demo</strong>
+          <span>Real MP3 playback · voice-synced lyric cues</span>
         </div>
         <div class="controls">
           <button class="play" id="playButton" aria-label="Play demo">▶</button>
@@ -341,19 +341,19 @@
       <div class="proof-item"><strong>Seek-safe sync</strong><span>Lyrics recalculate from current audio time, so scrubbing forward or backward stays accurate.</span></div>
       <div class="proof-item"><strong>Responsive</strong><span>Designed to work cleanly on desktop and mobile layouts.</span></div>
     </section>
-    <p class="footnote">Demo content and audio are original. The page plays a real MP3 file and synchronizes lyric cues with the HTML audio currentTime API; the same pattern can be placed in a DIVI Code Module.</p>
+    <p class="footnote">The demo voice is synthesized locally for timing proof. The page plays a real MP3 file and synchronizes each line with the HTML audio currentTime API; the same pattern can be placed in a DIVI Code Module.</p>
   </main>
 
   <script>
     const cueData = [
-      [0.0,  "Streetlights fade into the blue"],
-      [4.0,  "Quiet windows catch the morning"],
-      [8.0,  "Every second pulls us through"],
-      [12.0, "One small signal keeps on calling"],
-      [16.0, "Move the needle, watch it follow"],
-      [20.0, "Every word arrives on time"],
-      [24.0, "Skip ahead or drift back slowly"],
-      [28.0, "Audio and text stay in line"]
+      [0.800,  "Streetlights fade into the blue"],
+      [4.109,  "Quiet windows catch the morning"],
+      [7.468,  "Every second pulls us through"],
+      [10.722, "One small signal keeps on calling"],
+      [14.506, "Move the needle, watch it follow"],
+      [18.216, "Every word arrives on time"],
+      [21.445, "Skip ahead or drift back slowly"],
+      [24.999, "Audio and text stay in line"]
     ];
 
     const audio = document.getElementById('audio');
@@ -393,7 +393,7 @@
     }
 
     function activeIndexAt(time) {
-      let active = 0;
+      let active = -1;
       for (let i = 0; i < cueData.length; i++) {
         if (time >= cueData[i][0]) active = i; else break;
       }
