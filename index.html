@@ -1,0 +1,312 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0c261d">
+  <meta name="description" content="An interactive ecommerce tracking rescue case study: one real order, counted once, with the right revenue and source.">
+  <title>Northstar Supply — Ecommerce Tracking Rescue</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230c261d'/%3E%3Cpath d='M11 47 27 16l7 14 5-9 14 26H11Z' fill='%23f2f0e8'/%3E%3Cpath d='m26 48 6-10 6 10' fill='none' stroke='%23f26b38' stroke-width='5'/%3E%3C/svg%3E">
+  <link rel="preload" as="image" href="assets/northstar-hero.webp">
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <div class="announcement">
+    <span>FREE SHIPPING OVER $75</span>
+    <span class="announcement-center">FIELD-TESTED GEAR · BUILT TO LAST</span>
+    <span>30-DAY RETURNS</span>
+  </div>
+
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="Northstar Supply home">
+      <svg viewBox="0 0 40 40" aria-hidden="true"><path d="M5 32 16 9l5 10 4-7 10 20H5Z"/><path class="brand-accent" d="m16 32 4-7 4 7"/></svg>
+      <span>NORTHSTAR<br>SUPPLY</span>
+    </a>
+    <nav aria-label="Primary navigation">
+      <a href="#collection">Shop</a>
+      <a href="#story">Our story</a>
+      <a href="#rescue">Tracking rescue</a>
+    </nav>
+    <button class="cart-button" id="cartButton" aria-label="Open cart" aria-controls="cartDrawer">
+      BAG <span id="cartCount">0</span>
+    </button>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top" aria-labelledby="hero-title">
+      <img src="assets/northstar-hero.webp" alt="Hiker with a technical backpack overlooking a mountain range at sunrise" fetchpriority="high">
+      <div class="hero-shade"></div>
+      <div class="hero-content">
+        <p class="eyebrow light">THE HIGH COUNTRY COLLECTION</p>
+        <h1 id="hero-title">GO FURTHER.<br><span>CARRY LESS.</span></h1>
+        <p>Trail-ready essentials built for the miles ahead—not the shelf.</p>
+        <div class="hero-actions">
+          <a class="button button-light" href="#collection">SHOP THE COLLECTION <span aria-hidden="true">→</span></a>
+          <a class="button button-outline" href="#rescue">VIEW THE TRACKING RESCUE <span aria-hidden="true">↓</span></a>
+        </div>
+        <p class="hero-case-note"><b>INTERACTIVE ECOMMERCE CASE STUDY</b><span>I repaired this store's broken sales tracking and proved the result.</span></p>
+      </div>
+      <div class="hero-proof" aria-label="Store benefits">
+        <span><b>4.9</b> ★★★★★</span>
+        <span>2,400+ field reviews</span>
+        <span>Lifetime repair promise</span>
+      </div>
+      <div class="scroll-cue" aria-hidden="true">SCROLL <i></i></div>
+    </section>
+
+    <section class="benefit-strip" aria-label="Product benefits">
+      <div><b>01</b><span><strong>FIELD TESTED</strong>From switchbacks to city streets.</span></div>
+      <div><b>02</b><span><strong>BUILT RESPONSIBLY</strong>Recycled shell. Repairable design.</span></div>
+      <div><b>03</b><span><strong>READY TO ROAM</strong>Free shipping over $75.</span></div>
+    </section>
+
+    <section class="collection section" id="collection">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">GEAR THAT EARNS ITS PLACE</p>
+          <h2>Pack less.<br>Live more.</h2>
+        </div>
+        <p>One dependable system for long weekends, daily commutes and the unplanned road in between.</p>
+      </div>
+      <div class="product-grid">
+        <article class="product-card">
+          <div class="product-image">
+            <img src="assets/trail-pack.webp" alt="Olive green Trail Pack backpack">
+            <span class="product-badge">BEST SELLER</span>
+          </div>
+          <div class="product-info">
+            <div><h3>Trail Pack 28L</h3><p>Weather-ready day pack</p></div>
+            <strong>$129</strong>
+          </div>
+          <button class="add-button" data-product="Trail Pack 28L" data-price="129">ADD TO BAG <span>+</span></button>
+        </article>
+        <article class="product-card">
+          <div class="product-image">
+            <img src="assets/field-bottle.webp" alt="Charcoal Field Bottle">
+            <span class="product-badge">24 HOUR COLD</span>
+          </div>
+          <div class="product-info">
+            <div><h3>Field Bottle 24oz</h3><p>Vacuum-insulated steel</p></div>
+            <strong>$38</strong>
+          </div>
+          <button class="add-button" data-product="Field Bottle 24oz" data-price="38">ADD TO BAG <span>+</span></button>
+        </article>
+        <article class="product-card">
+          <div class="product-image">
+            <img src="assets/basecamp-blanket.webp" alt="Burnt orange Basecamp Blanket">
+            <span class="product-badge">NEW COLOR</span>
+          </div>
+          <div class="product-info">
+            <div><h3>Basecamp Blanket</h3><p>Warm recycled wool blend</p></div>
+            <strong>$89</strong>
+          </div>
+          <button class="add-button" data-product="Basecamp Blanket" data-price="89">ADD TO BAG <span>+</span></button>
+        </article>
+      </div>
+    </section>
+
+    <section class="campaign" id="story">
+      <img src="assets/northstar-campfire.webp" alt="A quiet mountain campsite beside a lake at blue hour">
+      <div class="campaign-shade"></div>
+      <div class="campaign-copy">
+        <p class="eyebrow light">OUT THERE IS THE POINT</p>
+        <h2>THE BEST STORIES<br>DON'T START<br>WITH A PLAN.</h2>
+        <p>Dependable gear means more room for the moments you never scheduled.</p>
+        <a href="#collection" class="text-link">EXPLORE THE SYSTEM <span>→</span></a>
+      </div>
+    </section>
+
+    <section class="story-twist" id="rescue">
+      <div class="twist-top">
+        <p class="eyebrow orange">THE CASE STUDY</p>
+        <p class="twist-kicker">The storefront was not the project.<br><b>The tracking rescue was.</b></p>
+      </div>
+      <div class="twist-title">
+        <h2>THE STORE LOOKED<br>HEALTHY.</h2>
+        <h2 class="outline">THE DATA WASN'T.</h2>
+      </div>
+      <div class="twist-explain">
+        <p>A shopper clicked an ad, bought one $129 pack, and created one real order.</p>
+        <p>Broken tracking told the business a different story: the sale was counted twice, the ad source disappeared, and the revenue no longer matched.</p>
+      </div>
+      <div class="journey" aria-label="Customer journey">
+        <span>GOOGLE AD</span><i>→</i><span>STORE</span><i>→</i><span>CHECKOUT</span><i>→</i><span>1 REAL ORDER</span><i class="journey-break">↯</i><span class="danger">BAD DATA</span>
+      </div>
+    </section>
+
+    <section class="problems section">
+      <div class="section-heading compact">
+        <div><p class="eyebrow">WHAT I FOUND</p><h2>Simple errors.<br>Expensive decisions.</h2></div>
+        <p>The problem was not whether people bought. The problem was whether the business could trust what its reports said after they bought.</p>
+      </div>
+      <div class="problem-grid">
+        <article><span class="problem-number">01</span><div class="problem-icon">×2</div><h3>One real sale was counted twice.</h3><p>Revenue and conversion rate looked better than reality.</p><small>Duplicate purchase event</small></article>
+        <article><span class="problem-number">02</span><div class="problem-icon">?</div><h3>The store forgot which ad made the sale.</h3><p>Paid traffic returned as “Direct” after checkout.</p><small>Attribution lost</small></article>
+        <article><span class="problem-number">03</span><div class="problem-icon">$</div><h3>The order total and report disagreed.</h3><p>A $129 order could not be reconciled to analytics.</p><small>Revenue mismatch</small></article>
+        <article><span class="problem-number">04</span><div class="problem-icon">#</div><h3>The receipt and analytics ID did not match.</h3><p>No stable key existed to prove which event belonged to which order.</p><small>Transaction ID drift</small></article>
+      </div>
+    </section>
+
+    <section class="before-after">
+      <div class="ba-heading">
+        <p class="eyebrow light">THE REPAIR, IN PLAIN ENGLISH</p>
+        <h2>ONE JOURNEY.<br>TWO VERY DIFFERENT REPORTS.</h2>
+      </div>
+      <div class="ba-grid">
+        <article class="before-card">
+          <header><span>BROKEN</span><b>BEFORE</b></header>
+          <div class="big-equation"><strong>1</strong><span>REAL<br>ORDER</span><i>→</i><strong>2</strong><span>REPORTED<br>PURCHASES</span></div>
+          <ul>
+            <li><span>Traffic source</span><b class="bad">LOST</b></li>
+            <li><span>Order revenue</span><b>$129.00</b></li>
+            <li><span>Reported revenue</span><b class="bad">$258.00</b></li>
+            <li><span>Checks passed</span><b class="bad">1 / 8</b></li>
+          </ul>
+        </article>
+        <article class="after-card">
+          <header><span>REPAIRED</span><b>AFTER</b></header>
+          <div class="big-equation"><strong>1</strong><span>REAL<br>ORDER</span><i>→</i><strong>1</strong><span>REPORTED<br>PURCHASE</span></div>
+          <ul>
+            <li><span>Traffic source</span><b class="good">GOOGLE / CPC</b></li>
+            <li><span>Order revenue</span><b>$129.00</b></li>
+            <li><span>Reported revenue</span><b class="good">$129.00</b></li>
+            <li><span>Checks passed</span><b class="good">8 / 8</b></li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="method section">
+      <div class="method-intro">
+        <p class="eyebrow">WHAT I ACTUALLY DID</p>
+        <h2>I repaired the measurement layer without changing the customer's journey.</h2>
+      </div>
+      <ol class="method-list">
+        <li><b>01</b><div><h3>Reproduced the failures</h3><p>Ran the same order through each traffic source and recorded where the data broke.</p></div></li>
+        <li><b>02</b><div><h3>Traced every event</h3><p>Mapped product view, cart, checkout and purchase against the real order.</p></div></li>
+        <li><b>03</b><div><h3>Rebuilt the rules</h3><p>Preserved attribution, stabilized transaction IDs and prevented duplicate purchases.</p></div></li>
+        <li><b>04</b><div><h3>Reconciled the result</h3><p>Verified revenue, currency, source, consent and one-to-one order matching.</p></div></li>
+      </ol>
+    </section>
+
+    <section class="demo-section" id="demo">
+      <div class="demo-intro">
+        <div>
+          <p class="eyebrow orange">INTERACTIVE PROOF</p>
+          <h2>See the repair—or<br>verify it yourself.</h2>
+        </div>
+        <div class="demo-explanation">
+          <p>The case study above explains the complete repair. If you want to test the evidence yourself, choose a visitor source and run the optional demo checkout.</p>
+          <p class="demo-safety"><b>OPTIONAL 60-SECOND DEMO</b><span>No payment · No account · No real purchase</span></p>
+        </div>
+      </div>
+      <div class="demo-shell">
+        <div class="demo-controls">
+          <div class="control-block">
+            <span class="control-step">1</span>
+            <label for="sourceSelect">Where did the shopper come from?</label>
+            <select id="sourceSelect">
+              <option value="google">Google Ads</option>
+              <option value="meta">Meta Ads</option>
+              <option value="email">Email campaign</option>
+              <option value="organic">Organic search</option>
+              <option value="direct">Direct visit</option>
+            </select>
+          </div>
+          <fieldset class="control-block">
+            <legend><span class="control-step">2</span>Which system should run?</legend>
+            <div class="mode-switch">
+              <button type="button" data-mode="broken">BROKEN</button>
+              <button type="button" data-mode="fixed" class="active">REPAIRED</button>
+            </div>
+          </fieldset>
+          <button class="run-button" id="runDemo">RUN OPTIONAL DEMO <span>→</span></button>
+        </div>
+        <div class="demo-steps" aria-label="Test steps">
+          <span><b>01</b> Choose source</span><i>→</i>
+          <span><b>02</b> Buy one pack</span><i>→</i>
+          <span><b>03</b> Compare records</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="proof-section" id="proof" aria-live="polite">
+      <div class="proof-header">
+        <div><p class="eyebrow light">QA INSPECTOR</p><h2 id="proofHeadline">READY FOR A TEST ORDER</h2></div>
+        <div class="score-ring" id="scoreRing"><strong>—</strong><span>OF 8</span></div>
+      </div>
+      <p class="proof-summary" id="proofSummary">Start the interactive order above. This panel will compare the real receipt with the purchase event sent to analytics.</p>
+      <div class="receipt-grid">
+        <article>
+          <span>REAL STORE ORDER</span>
+          <dl><div><dt>Order ID</dt><dd id="orderId">Waiting…</dd></div><div><dt>Revenue</dt><dd id="orderRevenue">—</dd></div><div><dt>Currency</dt><dd id="orderCurrency">—</dd></div><div><dt>Purchases</dt><dd>1</dd></div></dl>
+        </article>
+        <div class="reconcile-mark" id="reconcileMark">VS</div>
+        <article>
+          <span>ANALYTICS RECORD</span>
+          <dl><div><dt>Transaction ID</dt><dd id="analyticsId">Waiting…</dd></div><div><dt>Revenue</dt><dd id="analyticsRevenue">—</dd></div><div><dt>Source</dt><dd id="analyticsSource">—</dd></div><div><dt>Purchases</dt><dd id="analyticsPurchases">—</dd></div></dl>
+        </article>
+      </div>
+      <div class="check-grid" id="checkGrid">
+        <span>○ One purchase only</span><span>○ Stable transaction ID</span><span>○ Order ID matches</span><span>○ Revenue matches</span><span>○ Currency matches</span><span>○ Source preserved</span><span>○ Consent respected</span><span>○ One-to-one reconciliation</span>
+      </div>
+    </section>
+
+    <section class="final-cta">
+      <p class="eyebrow">THE RESULT</p>
+      <h2>ONE REAL ORDER.<br>ONE TRUSTED PURCHASE.</h2>
+      <div class="result-line"><span>BEFORE <b>1/8</b></span><i>→</i><span>AFTER <b>8/8</b></span></div>
+      <a href="#demo" class="button button-dark">RUN THE PROOF <span>→</span></a>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-brand">NORTHSTAR<br><span>SUPPLY</span></div>
+    <div><b>SHOP</b><a href="#collection">Trail Pack</a><a href="#collection">Field Bottle</a><a href="#collection">Basecamp Blanket</a></div>
+    <div><b>CASE STUDY</b><a href="#rescue">The problem</a><a href="#demo">Interactive proof</a><a href="#proof">QA evidence</a></div>
+    <div><b>PROJECT</b><p>Fictional storefront.<br>Real tracking logic.<br>Built as an ecommerce analytics case study.</p></div>
+    <small>© 2026 NORTHSTAR SUPPLY · DEMONSTRATION STORE</small>
+  </footer>
+
+  <div class="drawer-backdrop" id="drawerBackdrop" hidden></div>
+  <aside class="cart-drawer" id="cartDrawer" aria-labelledby="cartTitle" aria-hidden="true">
+    <header><h2 id="cartTitle">YOUR BAG</h2><button id="closeCart" aria-label="Close cart">×</button></header>
+    <div class="cart-empty" id="cartEmpty"><b>Your bag is ready for the trail.</b><p>Add one of the field-tested essentials to get started.</p></div>
+    <div id="cartItems"></div>
+    <div class="cart-footer" id="cartFooter" hidden>
+      <div><span>Subtotal</span><strong id="cartSubtotal">$0</strong></div>
+      <p>Shipping calculated at checkout.</p>
+      <button id="checkoutButton">CHECKOUT <span>→</span></button>
+    </div>
+  </aside>
+
+  <dialog class="checkout-dialog" id="checkoutDialog">
+    <button class="dialog-close" id="closeCheckout" aria-label="Close checkout">×</button>
+    <div class="checkout-layout">
+      <div>
+        <p class="eyebrow">NORTHSTAR SECURE CHECKOUT</p>
+        <h2>Almost out there.</h2>
+        <form id="checkoutForm">
+          <label>Email<input type="email" value="demo@northstar.test" required></label>
+          <div class="field-row"><label>First name<input value="Alex" required></label><label>Last name<input value="Morgan" required></label></div>
+          <label>Address<input value="88 Summit Way" required></label>
+          <div class="field-row"><label>City<input value="Portland" required></label><label>ZIP code<input value="97205" required></label></div>
+          <button type="submit">PLACE TEST ORDER <span>→</span></button>
+          <small>This is a demonstration. No payment or personal information is collected.</small>
+        </form>
+      </div>
+      <aside>
+        <span>ORDER SUMMARY</span>
+        <div class="checkout-product"><div class="mini-pack"></div><p><b>Trail Pack 28L</b><small>Olive · 1</small></p><strong>$129</strong></div>
+        <dl><div><dt>Subtotal</dt><dd>$129</dd></div><div><dt>Shipping</dt><dd>Free</dd></div><div class="total"><dt>Total</dt><dd>$129 USD</dd></div></dl>
+        <p class="checkout-source">Visitor source: <b id="checkoutSource">Google Ads</b></p>
+      </aside>
+    </div>
+  </dialog>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
